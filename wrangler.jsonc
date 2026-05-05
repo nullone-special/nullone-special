@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "nullone-special",
+  "compatibility_date": "2026-05-05",
+  "assets": {
+    "directory": "."
+  }
+}
