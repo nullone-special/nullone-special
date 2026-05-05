@@ -157,3 +157,42 @@ td {
 a.button {
   display: none !important;
 }
+
+.post-nav {
+  margin-bottom: 24px;
+  font-family: monospace;
+}
+
+.post-nav a {
+  color: var(--terminal-accent);
+}
+
+.post-content {
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+}
+
+.post-meta {
+  color: var(--terminal-muted);
+  font-family: monospace;
+  margin-bottom: 32px;
+}
+
+.post-content img {
+  max-width: 100%;
+  border: 1px solid var(--terminal-border);
+  border-radius: 8px;
+  display: block;
+  margin: 24px 0;
+}
+
+.post-content pre {
+  margin: 24px 0;
+}
