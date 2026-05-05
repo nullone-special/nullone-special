@@ -29,6 +29,5 @@ Collection of stuffs I wanted on the interwebs.
 {% endfor %}
 
 <span class="prompt-user">nullone@null</span>:~$ cat contact.txt
-GitHub: <a href="https://github.com/nl">https://github.com/nl</a>
-Email: nl [at] protonmail[.]com
+Email: nullone_special [at] protonmail[.]com
 </pre>
