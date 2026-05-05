@@ -9,43 +9,29 @@ title: "Home"
 00000020  90 90 eb 1e 5b 31 c0 88 43 07 89 5b 08 89 43 0c  |....[1..C..[..C.|
 00000030  b0 0b 8d 4b 08 8d 53 0c cd 80 e8 dd ff ff ff 2f  |...K..S......../|
 00000040  62 69 6e 2f 73 68 58 00 00 00 00 00 00 00 00 00  |bin/shX.........|
-```
 
-```console
 nullone@null:~$ whoami
 generic computer person
 
 nullone@null:~$ cat about.txt
-```
-
 Collection of stuffs I wanted on the interwebs.
 
----
-
-## Recent Posts
-
-```console
 nullone@null:~$ ls -lt /posts
-```
-
-{% raw %}
 {% for post in site.posts limit:5 %}
-### ▸ [{{ post.title }}]({{ post.url | relative_url }})
-
-`{{ post.date | date: "%Y-%m-%d" }}`  
-{% if post.tags %}
-`tags:` {% for tag in post.tags %}#{{ tag }} {% endfor %}
-{% endif %}
-
----
+-rw-r--r-- 1 nullone null {{ post.date | date: "%Y-%m-%d" }} {{ post.title }}
 {% endfor %}
-{% endraw %}
 
-## Contact
+nullone@null:~$ cat /posts/index.links
+{% for post in site.posts limit:5 %}
+[{{ post.date | date: "%Y-%m-%d" }}] ./{{ post.title | slugify }}/
+=> {{ post.url | relative_url }}
+{% if post.tags %}tags: {% for tag in post.tags %}#{{ tag }} {% endfor %}{% endif %}
 
-```console
+{% endfor %}
+
 nullone@null:~$ cat contact.txt
-```
+
 
 - GitHub: `https://github.com/nullone-special`
 - Email: `nullone_special [at] protonmail[.]com`
+```
