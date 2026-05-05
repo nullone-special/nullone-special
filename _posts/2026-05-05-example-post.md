@@ -1,40 +1,57 @@
 ---
 layout: post
-title: "Example Post Title"
+title: "Example Malware Analysis"
 date: 2026-05-05
-tags: [malware, reverse-engineering, notes]
+tags: [malware, reverse-engineering]
 ---
 
-<pre>
-<span class="prompt-user">nullone@null</span>:~/posts$ cat example-post.txt
+Brief intro explaining what this post covers.
 
-title: Example Post Title
-date:  2026-05-05
-tags:  malware reverse-engineering notes
+## Overview
 
-<span class="prompt-user">nullone@null</span>:~/posts$ cat overview.txt
-Brief summary of what this post is about.
+Describe the target, sample, or challenge.
 
-<span class="prompt-user">nullone@null</span>:~/posts$ cat context.txt
-What system, challenge, sample, lab, or topic you are looking at.
+## Environment
 
-<span class="prompt-user">nullone@null</span>:~/lab$ file sample.bin
+- OS:
+- Tools:
+- Notes:
+
+## Sample Info
+
+```console
+$ file sample.bin
 sample.bin: ELF 64-bit LSB executable, x86-64
+```
 
-<span class="prompt-user">nullone@null</span>:~/lab$ strings sample.bin | head
+## Static Analysis
+
+Explain what you found statically.
+
+```console
+$ strings sample.bin | head
 example_string_1
 example_string_2
-example_string_3
+```
 
-<span class="prompt-user">nullone@null</span>:~/posts$ cat findings.txt
-[01] Finding one
-[02] Finding two
-[03] Finding three
+## Dynamic Analysis
 
-<span class="prompt-user">nullone@null</span>:~/posts$ cat takeaways.txt
-What you learned, what was interesting, and what you would try next.
+Describe runtime behavior.
 
-<span class="prompt-user">nullone@null</span>:~/posts$ cat references.txt
-[01] https://example.com
-[02] https://example.com/research
-</pre>
+## Screenshots
+
+![Analysis screenshot]({{ '/assets/images/example.png' | relative_url }})
+
+## Findings
+
+- Finding one
+- Finding two
+- Finding three
+
+## Takeaways
+
+What you learned, what was interesting, what you'd do next.
+
+## References
+
+- https://example.com
