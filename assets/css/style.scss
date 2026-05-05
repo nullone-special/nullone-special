@@ -4,25 +4,18 @@
 @import "{{ site.theme }}";
 
 :root {
-  --bg: #08070a;
-  --panel: #111018;
-  --panel-dark: #0c0b10;
-  --text: #d8d2c8;
-  --muted: #8d8792;
-  --accent: #9d1b3d;
-  --accent-bright: #ff2d55;
-  --green: #22c55e;
-  --border: #2a1420;
+  --bg: #030305;
+  --terminal-bg: #09090d;
+  --terminal-border: #2a1420;
+  --terminal-text: #d8d2c8;
+  --terminal-muted: #8d8792;
+  --terminal-green: #22c55e;
+  --terminal-red: #ff2d55;
 }
 
 body {
-  background:
-    radial-gradient(circle at top center, rgba(157, 27, 61, 0.16), transparent 42%),
-    linear-gradient(180deg, #08070a 0%, #0d0b12 55%, #050407 100%);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  color: var(--text);
+  background: #030305;
+  color: var(--terminal-text);
   font-family: inherit;
 }
 
@@ -31,74 +24,92 @@ body {
 }
 
 .inner {
-  max-width: 860px;
+  max-width: 920px;
 }
 
 header {
-  background: linear-gradient(180deg, #15101a, #09070b);
-  border-bottom: 1px solid var(--accent);
-  box-shadow: 0 0 24px rgba(157, 27, 61, 0.35);
+  background: transparent;
+  border-bottom: none;
+}
+
+header .inner {
+  background: var(--terminal-bg);
+  border: 1px solid var(--terminal-border);
+  border-bottom: none;
+  border-radius: 14px 14px 0 0;
+  padding: 18px 28px;
+  box-shadow: 0 0 32px rgba(255, 45, 85, 0.18);
 }
 
 header h1 {
-  color: #f2e7df;
-  text-shadow:
-    0 0 6px rgba(255, 45, 85, 0.7),
-    0 0 18px rgba(157, 27, 61, 0.5);
-  letter-spacing: 0.04em;
+  color: var(--terminal-green);
+  font-size: 1.5rem;
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.45);
+}
+
+header h1::before {
+  content: "nullone@null:~$ ";
+  color: var(--terminal-red);
 }
 
 header h2 {
-  color: var(--muted);
+  color: var(--terminal-muted);
 }
 
-section {
-  background: rgba(17, 16, 24, 0.82);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 28px;
-  box-shadow:
-    0 0 0 1px rgba(255, 45, 85, 0.04),
-    0 18px 45px rgba(0, 0, 0, 0.55);
+section#main_content {
+  background: var(--terminal-bg);
+  border: 1px solid var(--terminal-border);
+  border-radius: 0 0 14px 14px;
+  padding: 30px;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.75);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #eadfd8;
-  text-shadow: 0 0 8px rgba(157, 27, 61, 0.35);
+section#main_content::before {
+  content: "● ● ●  terminal";
+  display: block;
+  margin: -30px -30px 28px -30px;
+  padding: 10px 18px;
+  background: #111018;
+  border-bottom: 1px solid var(--terminal-border);
+  border-radius: 0;
+  color: var(--terminal-muted);
+  letter-spacing: 0.08em;
+}
+
+h1, h2, h3 {
+  color: var(--terminal-green);
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.25);
 }
 
 a {
-  color: var(--accent-bright);
-  text-shadow: 0 0 8px rgba(255, 45, 85, 0.35);
+  color: var(--terminal-red);
+  text-decoration: none;
 }
 
 a:hover {
   color: #ff6b8a;
+  text-decoration: underline;
 }
 
 p, li {
-  color: var(--text);
-}
-
-blockquote {
-  border-left: 3px solid var(--accent);
-  background: rgba(157, 27, 61, 0.08);
-  color: #cfc6c0;
+  color: var(--terminal-text);
 }
 
 code {
-  background: #050407;
-  color: var(--green);
-  border: 1px solid #1f3b2a;
+  background: #050507;
+  color: var(--terminal-green);
+  border: 1px solid #193b26;
   border-radius: 4px;
   padding: 2px 5px;
 }
 
 pre {
-  background: #050407;
-  border: 1px solid #1f3b2a;
+  background: #050507;
+  border: 1px solid #193b26;
   border-radius: 8px;
-  box-shadow: inset 0 0 18px rgba(34, 197, 94, 0.08);
+  padding: 16px;
+  overflow-x: auto;
+  box-shadow: inset 0 0 18px rgba(34, 197, 94, 0.06);
 }
 
 pre code {
@@ -106,34 +117,27 @@ pre code {
   padding: 0;
 }
 
-table {
-  border: 1px solid var(--border);
-}
-
-th {
-  background: #17111c;
-  color: #f2e7df;
-  border-bottom: 1px solid var(--accent);
-}
-
-td {
-  border-bottom: 1px solid #211823;
-}
-
 hr {
   border: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  background: linear-gradient(90deg, transparent, var(--terminal-border), transparent);
 }
 
-.btn {
-  background: linear-gradient(180deg, #25121a, #12090e);
-  border: 1px solid var(--accent);
-  color: #f2e7df;
-  box-shadow: 0 0 12px rgba(157, 27, 61, 0.35);
+blockquote {
+  border-left: 3px solid var(--terminal-red);
+  background: rgba(255, 45, 85, 0.08);
+  color: var(--terminal-text);
 }
 
-.btn:hover {
-  background: linear-gradient(180deg, #3a1726, #180a11);
-  color: #fff;
+table {
+  border: 1px solid var(--terminal-border);
+}
+
+th {
+  background: #111018;
+  color: var(--terminal-green);
+}
+
+td {
+  border-top: 1px solid var(--terminal-border);
 }
