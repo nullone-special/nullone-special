@@ -16,12 +16,12 @@ generic computer person
 <span class="prompt-user">nullone@null</span>:~$ cat about.txt
 Collection of stuffs I wanted on the interwebs.
 
-<span class="prompt-user">nullone@null</span>:~$ ls -lt /posts
+<span class="prompt-user">nullone@null</span>:~$ ls -lt /recent_posts
 {% for post in site.posts limit:5 %}
 -rw-r--r-- 1 nullone null {{ post.date | date: "%Y-%m-%d" }} {{ post.title }}
 {% endfor %}
 
-<span class="prompt-user">nullone@null</span>:~$ cat /posts/index.links
+<span class="prompt-user">nullone@null</span>:~$ cat /posts/posts.links
 {% for post in site.posts limit:5 %}
 [{{ post.date | date: "%Y-%m-%d" }}] <a href="{{ post.url | relative_url }}">./{{ post.title | slugify }}/</a>
 {% if post.tags %}tags: {% for tag in post.tags %}#{{ tag }} {% endfor %}{% endif %}
@@ -30,4 +30,5 @@ Collection of stuffs I wanted on the interwebs.
 
 <span class="prompt-user">nullone@null</span>:~$ cat contact.txt
 Email: nullone_special [at] protonmail[.]com
+Github: https://github.com/nullone-special
 </pre>
