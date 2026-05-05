@@ -1,0 +1,136 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+:root {
+  --bg: #08070a;
+  --panel: #111018;
+  --panel-dark: #0c0b10;
+  --text: #d8d2c8;
+  --muted: #8d8792;
+  --accent: #9d1b3d;
+  --accent-bright: #ff2d55;
+  --green: #22c55e;
+  --border: #2a1420;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(157, 27, 61, 0.18), transparent 35%),
+    linear-gradient(180deg, #08070a 0%, #0d0b12 100%);
+  color: var(--text);
+  font-family: inherit;
+}
+
+#container {
+  background: transparent;
+}
+
+.inner {
+  max-width: 860px;
+}
+
+header {
+  background: linear-gradient(180deg, #15101a, #09070b);
+  border-bottom: 1px solid var(--accent);
+  box-shadow: 0 0 24px rgba(157, 27, 61, 0.35);
+}
+
+header h1 {
+  color: #f2e7df;
+  text-shadow:
+    0 0 6px rgba(255, 45, 85, 0.7),
+    0 0 18px rgba(157, 27, 61, 0.5);
+  letter-spacing: 0.04em;
+}
+
+header h2 {
+  color: var(--muted);
+}
+
+section {
+  background: rgba(17, 16, 24, 0.82);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 28px;
+  box-shadow:
+    0 0 0 1px rgba(255, 45, 85, 0.04),
+    0 18px 45px rgba(0, 0, 0, 0.55);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #eadfd8;
+  text-shadow: 0 0 8px rgba(157, 27, 61, 0.35);
+}
+
+a {
+  color: var(--accent-bright);
+  text-shadow: 0 0 8px rgba(255, 45, 85, 0.35);
+}
+
+a:hover {
+  color: #ff6b8a;
+}
+
+p, li {
+  color: var(--text);
+}
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  background: rgba(157, 27, 61, 0.08);
+  color: #cfc6c0;
+}
+
+code {
+  background: #050407;
+  color: var(--green);
+  border: 1px solid #1f3b2a;
+  border-radius: 4px;
+  padding: 2px 5px;
+}
+
+pre {
+  background: #050407;
+  border: 1px solid #1f3b2a;
+  border-radius: 8px;
+  box-shadow: inset 0 0 18px rgba(34, 197, 94, 0.08);
+}
+
+pre code {
+  border: none;
+  padding: 0;
+}
+
+table {
+  border: 1px solid var(--border);
+}
+
+th {
+  background: #17111c;
+  color: #f2e7df;
+  border-bottom: 1px solid var(--accent);
+}
+
+td {
+  border-bottom: 1px solid #211823;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.btn {
+  background: linear-gradient(180deg, #25121a, #12090e);
+  border: 1px solid var(--accent);
+  color: #f2e7df;
+  box-shadow: 0 0 12px rgba(157, 27, 61, 0.35);
+}
+
+.btn:hover {
+  background: linear-gradient(180deg, #3a1726, #180a11);
+  color: #fff;
+}
