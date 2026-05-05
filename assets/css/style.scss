@@ -150,3 +150,10 @@ th {
 td {
   border-top: 1px solid var(--terminal-border);
 }
+
+#downloads,
+.downloads,
+.btn,
+a.button {
+  display: none !important;
+}
